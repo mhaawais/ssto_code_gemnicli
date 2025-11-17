@@ -1,0 +1,266 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    overflow: hidden; /* Hide overflow from abstract shapes */
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Purple to Blue gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+    z-index: 10; /* Ensure navbar is above shapes */
+}
+
+.logo {
+    font-family: 'Pacifico', cursive; /* A script-like font for Canva logo */
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.auth-buttons button {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-signup {
+    background-color: #8a2be2; /* A slightly darker purple for contrast */
+    border: 1px solid #8a2be2;
+}
+
+.btn-signup:hover {
+    background-color: #7a1ad1;
+    border-color: #7a1ad1;
+}
+
+.btn-login {
+    border: 1px solid #fff;
+}
+
+.btn-login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+    text-align: center;
+    margin-top: 80px;
+    max-width: 800px;
+    position: relative;
+    z-index: 5; /* Ensure content is above shapes */
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #6a11cb; /* Use the primary purple color for text */
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-secondary {
+    background-color: rgba(0, 0, 0, 0.3); /* Darker, semi-transparent */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Abstract Shapes */
+.abstract-shapes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    border-radius: 10px;
+    transform: rotate(45deg); /* Rotate for diamond/angled look */
+}
+
+.shape-1 {
+    width: 80px;
+    height: 80px;
+    left: 10%;
+    bottom: -40px;
+    background-color: #ff69b4; /* Pink */
+    transform: rotate(20deg);
+    border-radius: 50%; /* Circle */
+}
+
+.shape-2 {
+    width: 120px;
+    height: 120px;
+    left: 25%;
+    bottom: -60px;
+    background-color: #00ffff; /* Cyan */
+    transform: rotate(-30deg);
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    right: 15%;
+    bottom: -50px;
+    background-color: #ffd700; /* Gold/Yellow */
+    transform: rotate(60deg);
+    border-radius: 50%; /* Circle */
+}
+
+.shape-4 {
+    width: 90px;
+    height: 90px;
+    right: 5%;
+    bottom: -45px;
+    background-color: #8a2be2; /* Blue Violet (for the graduation cap look) */
+    transform: rotate(10deg);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle for cap base */
+}
+.shape-4::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 10px;
+    background-color: #ffd700; /* Tassel color */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    border-radius: 5px;
+}
+.shape-4::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffd700; /* Tassel top */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        margin-top: 15px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .auth-buttons {
+        margin-top: 15px;
+    }
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    .hero-content p {
+        font-size: 18px;
+    }
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .cta-buttons button {
+        margin: 0;
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 28px;
+    }
+    .nav-links {
+        display: none; /* Hide nav links on very small screens */
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+}
